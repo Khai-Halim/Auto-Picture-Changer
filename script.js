@@ -1,14 +1,19 @@
-let picDiv = document.querySelector("#pic");
 
-let pictures = ["url('img/image-1.jpg')","url('img/image-2.jpg')","url('img/image-3.jpg')","url('img/image-4.jpg')","url('img/image-5.jpg')","url('img/image-6.jpg')","url('img/image-7.jpg')"]
 
-let imgNum = 1;
+document.addEventListener('DOMContentLoaded', function(){
+ 
+    let picDiv = document.querySelector("#pic");
+    let pictures = [1,2,3,4,5,6,7]
+    let imgNum = 1;
 
-setInterval(function(){
+    setInterval(function(){
+        picDiv.style.background = `url('img/image-${pictures[imgNum]}.jpg')` + "center/cover no-repeat";
+        imgNum++;
+        if(imgNum >= pictures.length){
+            imgNum = 0;
+        }
+    }, 5000);
+})
 
-    picDiv.style.background = pictures[imgNum] + "center/cover no-repeat";
-    imgNum++;
-    if(imgNum >= pictures.length){
-        imgNum = 0;
-    }
-}, 5000);
+
+
