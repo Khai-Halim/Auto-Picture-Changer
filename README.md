@@ -1,0 +1,1 @@
+The picture will change automatically every few seconds.
